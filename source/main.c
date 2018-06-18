@@ -15,7 +15,7 @@ int main(int argc, char **argv) {
     //Dumping tools menu
     ment_t ment_dump[] = {
         MDEF_BACK(),
-        MDEF_HANDLER("Dump card CXI", dump_cxi),
+        MDEF_HANDLER("Dump card XCI", dump_xci),
         MDEF_HANDLER("Dump card NCAs", dump_nca),
         MDEF_END()
     };
