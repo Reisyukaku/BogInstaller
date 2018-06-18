@@ -5,7 +5,7 @@
 #include "types.h"
 #include "dump.h"
 
-void dump_cxi() {
+void dump_xci() {
     printf("\x1b[%dmStubbed feature!\x1b[0m\n", RED);
 }
 
