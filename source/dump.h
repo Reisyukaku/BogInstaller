@@ -1,5 +1,5 @@
 #pragma once
 #include <switch.h>
 
-void dump_xci();
-void dump_nca();
+Result dump_xci();
+Result dump_nca();

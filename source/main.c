@@ -7,10 +7,23 @@
 #include "menu.h"
 #include "dump.h"
 #include "install.h"
-#include "apprec.h"
+#include "apps.h"
 #include "utils.h"
 
 int main(int argc, char **argv) {
+    
+    //Install menu
+    ment_t ment_install[] = {
+        MDEF_BACK(),
+        MDEF_HANDLER("From NSP", installNsp),
+        MDEF_HANDLER("From CDN", installShop),
+        MDEF_END()
+    };
+
+    menu_t menu_install = {
+        ment_install,
+        "Install Title", 0, 0
+    };
     
     //Dumping tools menu
     ment_t ment_dump[] = {
@@ -26,8 +39,9 @@ int main(int argc, char **argv) {
     };
     
     //Application records menu
-    ment_t ment_apprec[] = {
+    ment_t ment_app[] = {
         MDEF_BACK(),
+        MDEF_HANDLER("List Applications", listApps),
         MDEF_HANDLER("List record", listAppRec),
         MDEF_HANDLER("Push record", pushAppRec),
         MDEF_HANDLER("Remove record", removeAppRec),
@@ -35,16 +49,16 @@ int main(int argc, char **argv) {
         MDEF_END()
     };
 
-    menu_t menu_apprec = {
-        ment_apprec,
-        "Application Records", 0, 0
+    menu_t menu_app = {
+        ment_app,
+        "Applications", 0, 0
     };
     
     //Main menu
     ment_t ment_top[] = {
-        MDEF_HANDLER("Install", install),
+        MDEF_MENU("Install Title", &menu_install),
         MDEF_MENU("Dumping Tools", &menu_dump),
-        MDEF_MENU("Application records", &menu_apprec),
+        MDEF_MENU("Application Tools", &menu_app),
         MDEF_CAPTION("----------", YELLOW),
         MDEF_HANDLER("Quit", NULL),
         MDEF_END()
@@ -59,6 +73,7 @@ int main(int argc, char **argv) {
     consoleInit(NULL);
     nsInitialize();
     fsInitialize();
+    ncmInitialize();
     
     while(appletMainLoop()) {
         DrawMenu(&menu_top);
@@ -68,8 +83,8 @@ int main(int argc, char **argv) {
         gfxWaitForVsync();
     }
     nsExit();
+    ncmExit();
     gfxExit();
     fsExit();
     return 0;
 }
-

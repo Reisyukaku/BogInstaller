@@ -13,7 +13,8 @@ void ResultStr(int code) {
 void printHex(u8 *buf, u32 size) {
     for(u32 i=0;i<size;i++){
         printf("%02X ", buf[i]);
-        if(i != 0 && i % 0xf == 0)
+        if(i != 0 && (i % 0x10 == 0xF))
             printf("\n");
     }
+    printf("\n");
 }

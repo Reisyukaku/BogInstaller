@@ -27,7 +27,7 @@ typedef struct _ment_t
     void *data;
     union
     {
-        void(*handler)(void *);
+        Result(*handler)(void *);
         struct _menu_t *menu;
     };
 } ment_t;

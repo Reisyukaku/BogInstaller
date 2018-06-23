@@ -5,13 +5,14 @@
 #include "types.h"
 #include "dump.h"
 
-void dump_xci() {
+Result dump_xci() {
     printf("\x1b[%dmStubbed feature!\x1b[0m\n", RED);
+    return -1;
 }
 
-void dump_nca() {
+Result dump_nca() {
     FsDeviceOperator devop;
-    u32 ret = 0;
+    Result ret = 0;
     
     ret = fsOpenDeviceOperator(&devop);
     printf("fsOpenDeviceOperator() : "); ResultStr(ret);
@@ -84,4 +85,5 @@ void dump_nca() {
     } else {
         printf("Card not inserted!\n");
     }
+    return ret;
 }

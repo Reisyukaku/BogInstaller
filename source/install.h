@@ -1,3 +1,4 @@
 #pragma once
 
-void install();
+Result installShop();
+Result installNsp();
