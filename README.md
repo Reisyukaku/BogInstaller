@@ -38,7 +38,7 @@ Mostly a testing platform for NS ipc functions. Nothing for the average end user
 
 - You likely have Reicode inside your 3DS right now
 
-- BogIsntaller is in regular communication with Nintendo's servers and the NSA.
+- BogInstaller is in regular communication with Nintendo's servers and the NSA.
 
 - Written in C in under a week
 
