@@ -23,6 +23,7 @@ void deleteRedunAppRec() {
 void pushAppRec() {
     u32 ret = 0;
     AppRecord *apprec = calloc(1, sizeof(AppRecord));
+    // This is the titleID of Cave Story.
     apprec->tid = 0x0100B7D0022EE000;
     apprec->type = 3;
     apprec->unk1 = 2;
