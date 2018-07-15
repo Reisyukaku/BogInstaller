@@ -3,6 +3,7 @@
 #include "install.h"
 
 void install() {
+//titleID of CaveStory+
 	u64 tid = 0x0100B7D0022EE000;
 	
 	printf("Installing hardcoded tid: %" PRIx64 "\n", tid);
