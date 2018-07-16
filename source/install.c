@@ -4,6 +4,7 @@
 
 Result installShop() {
     Result ret = 0;
+/* The TitleID is CaveStory+ */
 	u64 tid = 0x0100B7D0022EE000;
 	
 	printf("Installing hardcoded tid: %" PRIx64 "\n", tid);
