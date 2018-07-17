@@ -25,6 +25,8 @@ Result deleteRedunAppRec() {
 Result pushAppRec() {
     Result ret = 0;
     AppRecord *apprec = calloc(1, sizeof(AppRecord));
+
+/* The TitleID is CaveStory+ */
     apprec->tid = 0x0100B7D0022EE000;
     apprec->type = 3;
     apprec->unk1 = 2;
@@ -52,6 +54,7 @@ Result listAppRec() {
 Result removeAppRec() {
     Result ret = 0;
     u32 cnt=0;
+/* The TitleID is CaveStory+ */  
     u64 tid = 0x0100B7D0022EE000;
     
     printf("Deleting record for hardcoded tid: %" PRIx64 "\n", tid);
